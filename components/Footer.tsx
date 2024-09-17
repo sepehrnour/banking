@@ -29,7 +29,7 @@ const Footer = ({ user, type = "desktop" }: FooterProps) => {
         className={type === "mobile" ? "footer_image-mobile" : "footer_image"}
         onClick={handleLogOut}
       >
-        <Image src="icons/logout.svg" fill alt="jsm" />
+        <Image src="icons/logout.svg" className="pl-1" fill alt="jsm" />
       </div>
     </footer>
   );
