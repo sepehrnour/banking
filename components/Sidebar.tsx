@@ -15,17 +15,17 @@ const Sidebar = ({ user }: SiderbarProps) => {
           href="/"
           className="mb-12 
                 cursor-pointer 
-                flex
-                items-center gap-2"
+                flex justify-center
+                items-center  gap-2"
         >
           <Image
             src="/icons/logo.svg"
             width={34}
             height={34}
             alt="Banking logo"
-            className="size-[24px] max-xl:size-14"
+            className="size-[36px] max-xl:size-[42px]"
           />
-          <h1 className="sidebar-logo">Pared</h1>
+          <h1 className="sidebar-logo">Pared Finance</h1>
         </Link>
         {sidebarLinks.map((item) => {
           const isActive =
