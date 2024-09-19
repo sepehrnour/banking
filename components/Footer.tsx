@@ -22,7 +22,7 @@ const Footer = ({ user, type = "desktop" }: FooterProps) => {
           {user?.firstName}
         </h1>
         <p className="text-14 truncate font-normal text-gray-600">
-          {user?.email}
+          {user?.email.toLowerCase()}
         </p>
       </div>
       <div
