@@ -106,6 +106,7 @@ declare type CategoryCount = {
   name: string;
   count: number;
   totalCount: number;
+  totalAmount: number;
 };
 
 declare type Receiver = {
@@ -247,6 +248,7 @@ declare interface TransactionTableProps {
 
 declare interface CategoryProps {
   category: CategoryCount;
+  amount: CategoryTotalAmount;
 }
 
 declare interface DoughnutChartProps {

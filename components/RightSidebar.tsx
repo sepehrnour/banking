@@ -8,8 +8,8 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
   if (!user) {
     return <></>; // or handle the null user case appropriately
   }
+
   const categories: CategoryCount[] = countTransactionCategories(transactions);
-  console.log(categories);
   return (
     <aside className="right-sidebar">
       <section className="flex flex-col pb-8">
@@ -24,7 +24,7 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
             <h1 className="profile-name">
               {user.firstName} {user.lastName}
             </h1>
-            <p className="profile-email">{user.email}</p>
+            <p className="profile-email">{user.email.toLowerCase()}</p>
           </div>
         </div>
       </section>
@@ -65,10 +65,14 @@ const RightSidebar = ({ user, transactions, banks }: RightSidebarProps) => {
           </div>
         )}
         <div className="mt-10 flex flex-1 flex-col gap-6">
-          <h2 className="header-2">Top categories</h2>
+          <h2 className="header-2">Top spending categories</h2>
           <div className="space-y-5">
-            {categories.map((category, index) => (
-              <Category key={category.name} category={category} />
+            {categories.map((category, total, index) => (
+              <Category
+                amount={total}
+                key={category.name}
+                category={category}
+              />
             ))}
           </div>
         </div>

@@ -11,22 +11,24 @@ const Sidebar = ({ user }: SiderbarProps) => {
   return (
     <section className="sidebar">
       <nav className="flex flex-col gap-4">
-        <Link
-          href="/"
-          className="mb-12 
-                cursor-pointer 
-                flex
-                items-center gap-2"
-        >
-          <Image
-            src="/icons/logo.svg"
-            width={34}
-            height={34}
-            alt="Banking logo"
-            className="size-[24px] max-xl:size-14"
-          />
-          <h1 className="sidebar-logo">Pared</h1>
-        </Link>
+        <div className="pt-8">
+          <Link
+            href="/"
+            className="mb-12 
+                  cursor-pointer 
+                  flex justify-center
+                  items-center  gap-2"
+          >
+            <Image
+              src="/icons/logo.svg"
+              width={34}
+              height={34}
+              alt="Banking logo"
+              className="size-[36px]"
+            />
+            <h1 className="sidebar-logo">Pared Finance</h1>
+          </Link>
+        </div>
         {sidebarLinks.map((item) => {
           const isActive =
             pathname === item.route || pathname.startsWith("${item.route}/");
